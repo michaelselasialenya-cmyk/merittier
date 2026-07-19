@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { SECTIONS } from "@/lib/sections";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -16,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Toolflow — AI Tools, Automation & Cloud for Builders",
+  title: "Merittier — Honest Reviews of AI Tools, Automation, Cloud & More",
   description:
     "Honest, first-hand reviews of AI tools, automation platforms, cloud hosting and productivity software. Built for people who ship.",
 };
@@ -26,11 +27,18 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${fraunces.variable} ${inter.variable} h-full antialiased`}>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}if(t==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
             <Link href="/" className="font-serif text-2xl font-semibold tracking-tight">
-              Toolflow<span className="text-accent">.</span>
+              Merittier<span className="text-accent">.</span>
             </Link>
             <nav className="hidden gap-7 text-xs font-medium uppercase tracking-[0.14em] text-muted sm:flex">
               {SECTIONS.map((s) => (
@@ -39,12 +47,15 @@ export default function RootLayout({
                 </Link>
               ))}
             </nav>
-            <Link
-              href="/cloud/best-vps-for-ai-agents"
-              className="rounded-full bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-opacity hover:opacity-90"
-            >
-              Start here
-            </Link>
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <Link
+                href="/cloud/best-vps-for-ai-agents"
+                className="rounded-full bg-accent px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white transition-opacity hover:opacity-90"
+              >
+                Start here
+              </Link>
+            </div>
           </div>
           <nav className="flex gap-5 overflow-x-auto border-t border-border px-5 py-2 text-[11px] font-medium uppercase tracking-[0.14em] text-muted sm:hidden">
             {SECTIONS.map((s) => (
@@ -59,7 +70,7 @@ export default function RootLayout({
 
         <footer className="border-t border-border bg-card">
           <div className="mx-auto max-w-6xl px-5 py-10 text-sm text-muted">
-            <p className="font-serif text-lg text-foreground">Toolflow</p>
+            <p className="font-serif text-lg text-foreground">Merittier</p>
             <p className="mt-2 max-w-md">
               Independent, first-hand reviews. Some links are affiliate links — they cost you nothing and help keep the site running.
             </p>
@@ -70,7 +81,7 @@ export default function RootLayout({
                 </Link>
               ))}
             </p>
-            <p className="mt-6 text-xs">© {new Date().getFullYear()} Toolflow. Not affiliated with the brands reviewed.</p>
+            <p className="mt-6 text-xs">© {new Date().getFullYear()} Merittier. Not affiliated with the brands reviewed.</p>
           </div>
         </footer>
       </body>

@@ -1,19 +1,24 @@
-# Domain Name Options — AI Tools / Automation / Productivity Publication
-Generated: 2026-07-18. Positioning wedge: "AI infrastructure & automation tooling for builders."
+# Domain Name — DECIDED: merittier.com
+Generated: 2026-07-18. Updated: 2026-07-18 (brand chosen).
 
-## Recommended (pick 1, then register on Porkbun/Namecheap/Cloudflare Registrar)
-1. **AgentStack.dev** — strong for the "builders + AI agents + automation" wedge. .dev is Google-owned, needs SSL (we have it). Implies a stack of agents/tools. Memorable, brandable.
-2. **Toolflow.ai** — fuses "tools" + "workflow/automation." Exact match to the category. .ai is the right TLD for this niche and ranks fine. Clear what the site is in 1 word.
-3. **StackAndAutomate.com** — descriptive, zero ambiguity, great for SEO (exact-match-ish). Longer but trustworthy; .com still carries authority with Google.
+## DECIDED: merittier.com
+Neutral parent brand. Scales beyond AI tools into luxury / course / product
+affiliates later. Registered as `.com` (not `.ai` — `.ai` would lock the brand
+to the tools/tech niche). The blog + affiliate-link model is the core business;
+socials and UGC ads come in a later phase.
 
-## Backup / alternates if taken
-- SmartStack.ai
-- AutoPilotTools.com
-- N8nStack.com (risky: trademark-adjacent, avoid)
-- BuilderBrew.ai
+## Why not a category name
+- "Toolflow.ai" was the original candidate but boxes the brand into
+  tools/automation. Rejected because the user plans multi-niche affiliates.
+- Domain keyword has ~zero ranking weight in 2026; articles carry the SEO. So a
+  neutral brand ranks just as high once article content is optimized.
 
-## My pick
-**Toolflow.ai** — shortest, brandable, .ai TLD signals the niche instantly, and "flow" maps to automation (n8n/Zapier/Make). Easy to say out loud, easy to remember.
+## Historical options considered
+- AgentStack.dev — builders/AI wedge, category-locked.
+- Toolflow.ai — tools+workflow, category-locked, rejected.
+- StackAndAutomate.com — descriptive, long.
+- Backup if taken: SmartStack.ai, AutoPilotTools.com, BuilderBrew.ai.
 
 ## Next step
-User picks one → I configure Cloudflare DNS + Vercel project around it. If undecided, I'll proceed with Toolflow.ai as default and you can redirect later.
+Configure Cloudflare DNS + Vercel project around merittier.com.
+Codebase rebrand done (layout wordmark, footer, metadata, article titles).

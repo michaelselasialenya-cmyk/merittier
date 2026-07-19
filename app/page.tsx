@@ -7,16 +7,14 @@ function Card({ a, feature }: { a: (typeof ARTICLES)[number]; feature?: boolean 
       href={`/${a.section}/${a.slug}`}
       className={`card-feature group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] ${feature ? "col-span-full" : ""}`}
     >
-      <div className={`relative w-full overflow-hidden bg-[#f3f1ec] ${feature ? "aspect-[16/7]" : "aspect-[16/9]"}`}>
+      <div className={`card-img relative w-full overflow-hidden bg-[#f3f1ec] ${feature ? "" : ""}`}>
         <div className="absolute inset-0 flex items-center justify-center font-serif text-3xl text-border">
           {a.title.slice(0, 1)}
         </div>
-        <span className="absolute left-3 top-3 rounded-full bg-background/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
-          {a.type}
-        </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className={`font-serif font-semibold leading-tight text-foreground group-hover:text-accent ${feature ? "text-3xl" : "text-xl"}`}>
+        <span className="card-cat">{a.type}</span>
+        <h3 className={`mt-2 font-serif font-semibold leading-tight text-foreground group-hover:text-accent ${feature ? "text-3xl" : "text-xl"}`}>
           {a.title}
         </h3>
         <p className="mt-2 line-clamp-3 text-sm text-muted">{a.dek}</p>
