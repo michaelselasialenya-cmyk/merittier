@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ARTICLES, getArticle, type Article } from "@/lib/articles";
 import { getSection } from "@/lib/sections";
 import { AffiliateLink } from "@/components/AffiliateLink";
+import { CoverImage } from "@/components/CoverImage";
 
 export function generateStaticParams() {
   return ARTICLES.map((a) => ({ section: a.section, slug: a.slug }));
@@ -11,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ section: string; slug: string }> }) {
   const { slug } = await params;
   const a = getArticle(slug);
-  return { title: a ? `${a.title} — Merittier` : "Merittier" };
+  return { title: a ? `${a.title} - Merittier` : "Merittier" };
 }
 
 // Minimal, safe markdown renderer (subset: #, ##, ###, tables, - lists, **bold**, paragraphs).
@@ -24,13 +25,13 @@ function renderMarkdown(body: string) {
   while (i < lines.length) {
     const line = lines[i];
     if (line.startsWith("### ")) {
-      blocks.push(<h3 key={key++} className="mt-8 font-serif text-2xl font-semibold">{line.slice(4)}</h3>);
+      blocks.push(<h3 key={key++} className="mt-8 text-2xl font-bold">{line.slice(4)}</h3>);
       i++;
     } else if (line.startsWith("## ")) {
-      blocks.push(<h2 key={key++} className="mt-10 font-serif text-3xl font-semibold">{line.slice(3)}</h2>);
+      blocks.push(<h2 key={key++} className="mt-10 text-3xl font-bold">{line.slice(3)}</h2>);
       i++;
     } else if (line.startsWith("# ")) {
-      blocks.push(<h1 key={key++} className="mt-6 font-serif text-4xl font-semibold">{line.slice(2)}</h1>);
+      blocks.push(<h1 key={key++} className="mt-6 text-4xl font-bold">{line.slice(2)}</h1>);
       i++;
     } else if (line.startsWith("|")) {
       // table block
@@ -92,10 +93,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ sectio
       <Link href={`/${section}`} className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
         ← {sec?.name}
       </Link>
-      <h1 className="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">{a.title}</h1>
+      <h1 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">{a.title}</h1>
       <p className="mt-4 text-xl text-muted">{a.dek}</p>
 
-      <div className="my-8 aspect-[16/8] w-full overflow-hidden rounded-2xl bg-[#f3f1ec]" />
+      <CoverImage
+        src={a.image}
+        alt={a.title}
+        className="my-8 aspect-[16/8] w-full rounded-xl border border-border"
+        sizes="(max-width: 768px) 100vw, 768px"
+        priority
+      />
 
       {bodyHtml ? (
         <div className="prose-tf space-y-2">{bodyHtml}</div>
@@ -106,9 +113,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ sectio
       )}
 
       {a.program && (
-        <div className="my-10 rounded-2xl border border-border bg-card p-6 text-center">
+        <div className="my-10 rounded-xl border border-border bg-card p-6 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">My pick</p>
-          <p className="mt-2 font-serif text-2xl font-semibold">Ready to try it?</p>
+          <p className="mt-2 text-2xl font-bold">Ready to try it?</p>
           <div className="mt-4 flex justify-center">
             <AffiliateLink program={a.program ?? ""}>
               Get the deal →

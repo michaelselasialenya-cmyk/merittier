@@ -18,7 +18,7 @@ export function AffiliateLink({
       href={href}
       target="_blank"
       rel="sponsored nofollow noopener"
-      className={className ?? "inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"}
+      className={className ?? "inline-block rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"}
     >
       {children}
     </Link>

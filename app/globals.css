@@ -1,25 +1,27 @@
 @import "tailwindcss";
 
-/* ---------- LIGHT (default) — Design Hunter-inspired warm editorial ---------- */
+/* ---------- Dark theme (default), elegant emerald accent ---------- */
 :root {
-  --background: #fafaf8;
-  --foreground: #2b2925;
-  --muted: #6b6862;
-  --accent: #c8553d;
-  --border: #ece9e4;
-  --card: #ffffff;
-  --card-hover: #f6f4ef;
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #9ca3af;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --border: #27272a;
+  --card: #111827;
+  --card-hover: #16211c;
 }
 
-/* ---------- DARK — same warm charcoal, ink-on-charcoal ---------- */
-.dark {
-  --background: #16140f;
-  --foreground: #f3efe7;
-  --muted: #a39e93;
-  --accent: #e0714f;
-  --border: #2c2922;
-  --card: #1f1c16;
-  --card-hover: #262218;
+/* ---------- Light mode ---------- */
+.light {
+  --background: #ffffff;
+  --foreground: #111827;
+  --muted: #6b7280;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --border: #e5e7eb;
+  --card: #f9fafb;
+  --card-hover: #f0fdf4;
 }
 
 @theme inline {
@@ -27,9 +29,9 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --color-border: var(--border);
   --color-card: var(--card);
-  --font-serif: var(--font-fraunces);
   --font-sans: var(--font-inter);
 }
 
@@ -42,45 +44,35 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 a { color: inherit; }
 
-/* ---------- CARD GRID — Gridlove matrix, Design Hunter near-square cards ---------- */
+/* ---------- CARD GRID ---------- */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (min-width: 1024px) {
   .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-.card-feature { grid-column: span 1; }
-@media (min-width: 1024px) {
-  .card-feature { grid-column: span 2; grid-row: span 2; }
-}
 
-/* Design Hunter: category label sits ABOVE the title, image ratio ~1:1 (66:67) */
 .card-cat {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--accent);
 }
 .card-img {
-  aspect-ratio: 1 / 1;
-}
-@media (min-width: 1024px) {
-  .card-feature .card-img { aspect-ratio: 16 / 10; }
+  aspect-ratio: 3 / 2;
 }
