@@ -54,6 +54,12 @@ h1, h2, h3, h4 {
 
 a { color: inherit; }
 
+a[href^="mailto:"]:not(.contact-email) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* ---------- CARD GRID ---------- */
 .card-grid {
   display: grid;

@@ -41,7 +41,7 @@ export default function AboutPage() {
       <h2 className="pt-4 text-2xl font-bold">Questions or corrections</h2>
       <p>
         Spotted something outdated, or want us to cover a specific product? Reach out at{" "}
-        <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-accent">
+        <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-accent underline underline-offset-2">
           {SITE_EMAIL}
         </a>
         .

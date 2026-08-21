@@ -21,7 +21,7 @@ export default function DisclosurePage() {
       </p>
       <p>
         If you have questions about a specific link or recommendation, contact us at{" "}
-        <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-accent">
+        <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-accent underline underline-offset-2">
           {SITE_EMAIL}
         </a>
         .

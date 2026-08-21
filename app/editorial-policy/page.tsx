@@ -56,7 +56,7 @@ export default function EditorialPolicyPage() {
       <h2 className="pt-4 text-2xl font-bold">Corrections</h2>
       <p>
         If you find outdated pricing, a factual error, or a broken link, tell us at{" "}
-        <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-accent">
+        <a href={`mailto:${SITE_EMAIL}`} className="font-medium text-accent underline underline-offset-2">
           {SITE_EMAIL}
         </a>{" "}
         and we&rsquo;ll fix it.

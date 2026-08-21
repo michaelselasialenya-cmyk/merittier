@@ -105,7 +105,7 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm text-muted">
                   <li className="flex items-center gap-2">
                     <Mail className="h-4 w-4 shrink-0" />
-                    <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground">{SITE_EMAIL}</a>
+                    <a href={`mailto:${SITE_EMAIL}`} className="contact-email hover:text-foreground">{SITE_EMAIL}</a>
                   </li>
                 </ul>
               </div>
