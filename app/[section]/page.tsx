@@ -22,12 +22,12 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
       <header className="mb-10 border-b border-border pb-8">
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{sec.name}</p>
         <h1 className="mt-3 text-4xl font-bold sm:text-5xl">{sec.name}</h1>
-        <p className="mt-3 max-w-2xl text-lg text-muted">{sec.blurb}</p>
+        <p className="mt-3 max-w-2xl text-lg text-muted">{sec.intro}</p>
       </header>
 
       {best && (
         <div className="mb-10 rounded-xl border border-border bg-card p-6">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Our pick for {sec.name}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Featured in {sec.name}</p>
           <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <Link href={`/${best.section}/${best.slug}`} className="text-2xl font-bold hover:text-accent">
@@ -39,7 +39,7 @@ export default async function SectionPage({ params }: { params: Promise<{ sectio
               href={`/${best.section}/${best.slug}`}
               className="shrink-0 rounded-md bg-accent px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
             >
-              Read the pick →
+              Read →
             </Link>
           </div>
         </div>

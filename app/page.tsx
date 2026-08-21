@@ -53,23 +53,26 @@ export default function Home() {
       <section className="mb-20 grid items-center gap-12 lg:grid-cols-2">
         <div className="space-y-6">
           <h1 className="text-4xl font-bold leading-tight md:text-6xl">
-            The tools worth your time <span className="text-accent">reviewed properly.</span>
+            Better decisions, <span className="text-accent">before you spend a cent.</span>
           </h1>
           <p className="text-lg text-muted md:text-xl">
-            No fluff, no recycled listicles. First-hand testing of AI tools, automation and cloud infrastructure.
+            Practical, honest guidance across tech, wellness, home, and everyday life, so you know exactly what you&rsquo;re buying before you buy it.
+          </p>
+          <p className="text-base text-muted">
+            No hype, no filler. Just what&rsquo;s worth your money and what isn&rsquo;t.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href="/cloud" className="rounded-md bg-accent px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-accent-hover">
+            <Link href="/articles" className="rounded-md bg-accent px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-accent-hover">
               Latest Reviews
             </Link>
-            <Link href="/cloud/best-vps-for-ai-agents" className="rounded-md border border-border px-6 py-3 text-center font-semibold transition-colors hover:border-accent">
-              Our Top Pick
+            <Link href="/topics" className="rounded-md border border-border px-6 py-3 text-center font-semibold transition-colors hover:border-accent">
+              Browse Topics
             </Link>
           </div>
         </div>
         <CoverImage
           src="/images/hero.jpg"
-          alt="Workspace with a laptop used for reviewing developer tools"
+          alt="Notebook and workspace for researching a purchase"
           className="h-[360px] w-full rounded-xl border border-border"
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
@@ -99,7 +102,7 @@ export default function Home() {
         <div className="mx-auto max-w-xl text-center">
           <h2 className="text-2xl font-bold">Stay Updated</h2>
           <p className="mt-2 text-muted">
-            Get new reviews, comparisons and pricing updates as soon as they&rsquo;re published.
+            Get new guides, comparisons and pricing updates as soon as they&rsquo;re published.
           </p>
           <form className="mt-6 flex flex-col gap-3 sm:flex-row">
             <input

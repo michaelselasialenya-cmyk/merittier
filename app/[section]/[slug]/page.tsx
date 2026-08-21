@@ -108,20 +108,20 @@ export default async function ArticlePage({ params }: { params: Promise<{ sectio
         <div className="prose-tf space-y-2">{bodyHtml}</div>
       ) : (
         <div className="prose-tf space-y-5 text-[1.05rem] leading-relaxed text-foreground">
-          <p>Most &ldquo;best of&rdquo; articles are written by people who have never opened the product. This one isn&rsquo;t.</p>
+          <p>This article is still being written. Check back soon for the full research-based guide.</p>
         </div>
       )}
 
       {a.program && (
         <div className="my-10 rounded-xl border border-border bg-card p-6 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">My pick</p>
-          <p className="mt-2 text-2xl font-bold">Ready to try it?</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">Next step</p>
+          <p className="mt-2 text-2xl font-bold">See the product details</p>
           <div className="mt-4 flex justify-center">
             <AffiliateLink program={a.program ?? ""}>
-              Get the deal →
+              Check current price →
             </AffiliateLink>
           </div>
-          <p className="mt-3 text-xs text-muted">Affiliate link · costs you nothing extra.</p>
+          <p className="mt-3 text-xs text-muted">Affiliate link. Costs you nothing extra.</p>
         </div>
       )}
 

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { Github, Linkedin, Mail, Rss, Twitter } from "lucide-react";
+import { Mail } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SITE_EMAIL } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -11,9 +12,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Merittier - Honest Reviews of AI Tools, Automation, Cloud & More",
+  title: "Merittier - Better buying decisions before you spend",
   description:
-    "Honest, first-hand reviews of AI tools, automation platforms, cloud hosting and productivity software. Built for people who ship.",
+    "Independent buying guidance across tech, wellness, home, and everyday life. Practical, honest answers to whether something is actually worth buying.",
 };
 
 const NAV = [
@@ -77,14 +78,8 @@ export default function RootLayout({
                   Meri<span className="text-accent">ttier</span>
                 </Link>
                 <p className="text-sm text-muted">
-                  Independent, first-hand reviews of AI tools, automation and cloud infrastructure.
+                  Independent buying guidance across tech, wellness, home, and everyday life.
                 </p>
-                <div className="flex space-x-4 text-muted">
-                  <Link href="#" className="hover:text-foreground"><Twitter className="h-5 w-5" /></Link>
-                  <Link href="#" className="hover:text-foreground"><Github className="h-5 w-5" /></Link>
-                  <Link href="#" className="hover:text-foreground"><Linkedin className="h-5 w-5" /></Link>
-                  <Link href="#" className="hover:text-foreground"><Rss className="h-5 w-5" /></Link>
-                </div>
               </div>
               <div>
                 <h3 className="mb-4 font-medium">Navigate</h3>
@@ -99,23 +94,29 @@ export default function RootLayout({
               <div>
                 <h3 className="mb-4 font-medium">Resources</h3>
                 <ul className="space-y-2 text-sm text-muted">
-                  <li><Link href="/cloud/best-vps-for-ai-agents" className="hover:text-foreground">Best VPS Picks</Link></li>
                   <li><Link href="/topics" className="hover:text-foreground">Browse Topics</Link></li>
                   <li><Link href="/articles" className="hover:text-foreground">All Articles</Link></li>
+                  <li><Link href="/editorial-policy" className="hover:text-foreground">Editorial Policy</Link></li>
+                  <li><Link href="/disclosure" className="hover:text-foreground">Affiliate Disclosure</Link></li>
                 </ul>
               </div>
               <div>
                 <h3 className="mb-4 font-medium">Contact</h3>
                 <ul className="space-y-2 text-sm text-muted">
                   <li className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
-                    <span>marketing@merittier.com</span>
+                    <Mail className="h-4 w-4 shrink-0" />
+                    <a href={`mailto:${SITE_EMAIL}`} className="hover:text-foreground">{SITE_EMAIL}</a>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="mt-12 border-t border-border pt-6 text-sm text-muted">
-              <p>© {new Date().getFullYear()} Merittier. Not affiliated with the brands reviewed. Some links are affiliate links.</p>
+              <p>
+                © {new Date().getFullYear()} Merittier. Some links are affiliate links. See our{" "}
+                <Link href="/disclosure" className="text-foreground hover:text-accent">Affiliate Disclosure</Link>
+                {" "}and{" "}
+                <Link href="/editorial-policy" className="text-foreground hover:text-accent">Editorial Policy</Link>.
+              </p>
             </div>
           </div>
         </footer>

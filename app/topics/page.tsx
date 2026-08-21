@@ -11,7 +11,7 @@ export default function TopicsPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">Browse by topic</p>
         <h1 className="mt-3 text-4xl font-bold sm:text-5xl">Topics</h1>
         <p className="mt-3 max-w-2xl text-lg text-muted">
-          Reviews grouped by category. Jump straight to what you care about.
+          Six fixed categories. Jump to the kind of buying decision you&rsquo;re actually making.
         </p>
       </header>
 
